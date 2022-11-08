@@ -2,15 +2,15 @@
 
 volatile reg_t g_i2c_reg_data[] =
 {
-	[VERSION] = 		{ READ_ONLY, 	REG_VERSION_ADDR, 	CHAR,   {.char_val = 0x01}, 	{0} },
-	[UINT16_RW] = 		{ FULL_ACCESS, 	REG_UINT16_RW_ADDR, BOOL,   {.uint16_val = 0x00}, 	{0} },
-	[INT16_RW] = 		{ FULL_ACCESS, 	REG_INT16_RW_ADDR, 	UINT16, {.int16_val = 0x00}, 	{0} },
-	[BOOL_RW] = 		{ FULL_ACCESS, 	REG_BOOL_RW_ADDR, 	UINT16, {.bool_val = 0x00}, 	{0} },
-	[CHAR_RW] = 		{ FULL_ACCESS, 	REG_CHAR_RW_ADDR, 	UINT16, {.char_val = 0x00}, 	{0} },
-	[UINT16_RO] =		{ READ_ONLY, 	REG_UINT16_RO_ADDR, UINT16, {.uint16_val = 0x3344}, {0} },
-	[INT16_RO] = 		{ READ_ONLY, 	REG_INT16_RO_ADDR, 	UINT16, {.int16_val = 0x2233}, 	{0} },
-	[BOOL_RO] = 		{ READ_ONLY, 	REG_BOOL_RO_ADDR, 	BOOL,   {.bool_val = 0x01}, 	{0} },
-	[CHAR_RO] = 		{ READ_ONLY, 	REG_CHAR_RO_ADDR, 	UINT16, {.char_val = 0x15},		{0} },
+		[VERSION] = 		{ READ_ONLY, 	REG_VERSION_ADDR, 	CHAR,   {.char_val = 0x01}, 	{0} },
+		[UINT16_RW] = 		{ FULL_ACCESS, 	REG_UINT16_RW_ADDR, UINT16,   {.uint16_val = 0x00}, 	{0} },
+		[INT16_RW] = 		{ FULL_ACCESS, 	REG_INT16_RW_ADDR, 	INT16, {.int16_val = 0x00}, 	{0} },
+		[BOOL_RW] = 		{ FULL_ACCESS, 	REG_BOOL_RW_ADDR, 	BOOL, {.bool_val = 0x00}, 	{0} },
+		[CHAR_RW] = 		{ FULL_ACCESS, 	REG_CHAR_RW_ADDR, 	CHAR, {.char_val = 0x00}, 	{0} },
+		[UINT16_RO] =		{ READ_ONLY, 	REG_UINT16_RO_ADDR, UINT16, {.uint16_val = 0x3344}, {0} },
+		[INT16_RO] = 		{ READ_ONLY, 	REG_INT16_RO_ADDR, 	INT16, {.int16_val = 0x2233}, 	{0} },
+		[BOOL_RO] = 		{ READ_ONLY, 	REG_BOOL_RO_ADDR, 	BOOL,   {.bool_val = 0x01}, 	{0} },
+		[CHAR_RO] = 		{ READ_ONLY, 	REG_CHAR_RO_ADDR, 	CHAR, {.char_val = 0x15},		{0} },
 };
 
 reg_idx_t reg_get_idx(uint8_t address){
