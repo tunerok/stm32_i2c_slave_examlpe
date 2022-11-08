@@ -15,7 +15,7 @@ int protocol_i2c_parse(int i2c_event){
 		  //Get reg idx by address
 		  idx = reg_get_idx(buff[0]);
 		  //Check if we can get access to this reg
-		  if ((idx != NONE) && (idx != ECHO) && (g_i2c_reg_data[idx].reg_addr != WRITE_ONLY)){
+		  if ((idx != NONE) && (idx != ECHO) && (g_i2c_reg_data[idx].access != WRITE_ONLY)){
 			  //If OK, send data contains by reg
 			  i2c_slave_write((uint8_t *)&g_i2c_reg_data[idx].value, reg_get_len(idx));
 		  }
@@ -45,7 +45,7 @@ int protocol_i2c_parse(int i2c_event){
 			  //Get reg idx by address
 			  idx = reg_get_idx(buff[0]);
 			  //Check if we can get access to this reg
-			  if ((idx != NONE) && (idx != ECHO) && (g_i2c_reg_data[idx].reg_addr != READ_ONLY)){
+			  if ((idx != NONE) && (idx != ECHO) && (g_i2c_reg_data[idx].access != READ_ONLY)){
 				  //Change data in the regs by idx
 				  switch (g_i2c_reg_data[idx].value_type) {
 					case UINT16:

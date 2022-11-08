@@ -55,6 +55,10 @@ void reg_factory(void) {
 			g_i2c_reg_data[reg_idx].value.uint16_val =
 					g_i2c_reg_data[reg_idx].def_val.uint16_val;
 			break;
+		case INT16:
+			g_i2c_reg_data[reg_idx].value.int16_val =
+					g_i2c_reg_data[reg_idx].def_val.int16_val;
+			break;
 		case CHAR:
 			g_i2c_reg_data[reg_idx].value.char_val =
 					g_i2c_reg_data[reg_idx].def_val.char_val;
