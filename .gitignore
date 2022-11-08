@@ -1,0 +1,5 @@
+stm32_i2c_slave_example/.mxproject
+stm32_i2c_slave_example/Debug/**
+stm32_i2c_slave_example/.settings/
+stm32_i2c_slave_example/Release/**
+
