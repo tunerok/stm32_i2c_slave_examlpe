@@ -38,7 +38,7 @@ But a more or less working project, where there is an implementation of **severa
 
 In general, I reached the bottom of the comedy. I liked how it worked on **mbedOS**, so I got into the sources (https://github.com/ARMmbed/mbed-os and https://github.com/ARMmbed/mbed-hal). And he began to read the code sadly and sweepingly cut unnecessary dependencies.
 
-The logic of the OS firmware is as follows - there are interrupt handlers that fill / empty buffers, set ready flags, and try to work out errors. In the “main” loop, these flags are read and the program performs certain actions depending on the flags set - it writes or outputs data.
+The operating logic is as follows - there are interrupt handlers in the current ones, the main work of which is related to reading and setting records in the registers of the slave device. In the main program loop, only the line is checked for errors and dependency status.
 
 In general, we got a small example, more or less universal for STM32 devices. This project was made for the most popular **Nucleo-F303RE** debug board on Aliexpress.
 
@@ -54,7 +54,7 @@ Checked on STM32L433, STM32F302R8
 
 В общем, я достиг <del>комедии</del> дна. Мне понравилось, как работало на **mbedOS**, поэтому, я полез в исходники (https://github.com/ARMmbed/mbed-os и https://github.com/ARMmbed/mbed-hal). И начал грустно вычитывать код и размашисто резать лишние зависимости.
 
-Логика работы следующая – есть обработчики прерываний, которые заполняют/опустошают буфферы, выставляют флажки готовности, пытаются отработать ошибки. В “основном” цикле эти флажки читаются и программа выполняет определенные действия в зависимости от установленных флажков – записывает или выдает данные.
+Логика работы следующая – есть обработчики прерываний в которых происходит основная работа связанная с чтением и установкой значений в регистры подчиненного устройства. В основном цикле программы происходит лишь проверка линии на ошибки и состояние зависания.
 
 В общем, получился небольшой пример, более-менее универсальный для STM32-устройств. Данный проект сделан для самой популярной на Алиэкспесс платы-отладки **Nucleo-F303RE**
 
