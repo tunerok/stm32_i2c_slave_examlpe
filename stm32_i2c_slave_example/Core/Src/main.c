@@ -105,11 +105,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //Check i2c events
-	  i2c_event = i2c_slave_receive();
-
-	  //Serving events over the i2c bus
-	  protocol_i2c_parse(i2c_event);
 
 	  //i2c bus hang check
 	  i2c_slave_check_timeout();
